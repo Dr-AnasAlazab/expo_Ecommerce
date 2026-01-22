@@ -3,12 +3,12 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
-   "engines": {
+  "engines": {
     "node": ">=20.0.0"
   },
   "scripts": {
-"build": "npm install --prefix backend && npm install --prefix admin && npm run build -- prefix admin",
-"start": "npm run start --prefix backend"
+    "build": "npm install --prefix backend && npm install --prefix admin && npm run build --prefix admin",
+    "start": "npm run start --prefix backend"
   },
   "repository": {
     "type": "git",
