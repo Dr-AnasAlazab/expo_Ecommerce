@@ -21,5 +21,8 @@
   "bugs": {
     "url": "https://github.com/Dr-AnasAlazab/expo_Ecommerce/issues"
   },
-  "homepage": "https://github.com/Dr-AnasAlazab/expo_Ecommerce#readme"
+  "homepage": "https://github.com/Dr-AnasAlazab/expo_Ecommerce#readme",
+  "dependencies": {
+    "path": "^0.12.7"
+  }
 }
