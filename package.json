@@ -8,7 +8,9 @@
   },
   "scripts": {
     "build": "npm install --prefix backend && npm install --prefix admin && npm run build --prefix admin",
-    "start": "npm run start --prefix backend"
+    "start": "npm run start --prefix backend",
+        "lint": "eslint ."
+
   },
   "repository": {
     "type": "git",
@@ -21,5 +23,14 @@
   "bugs": {
     "url": "https://github.com/Dr-AnasAlazab/expo_Ecommerce/issues"
   },
-  "homepage": "https://github.com/Dr-AnasAlazab/expo_Ecommerce#readme"
+  "homepage": "https://github.com/Dr-AnasAlazab/expo_Ecommerce#readme",
+  "dependencies": {
+    "install": "^0.13.0"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.39.2",
+    "eslint": "^9.39.2",
+    "eslint-plugin-react": "^7.37.5",
+    "globals": "^17.3.0"
+  }
 }
