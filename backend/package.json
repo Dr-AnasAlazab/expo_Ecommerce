@@ -10,7 +10,8 @@
   "scripts": {
     "dev": "node --watch src/server.js",
     "start": "npm install && node src/server.js",
-    "seed:products": "node src/seeds/index.js"
+    "seed:products": "node src/seeds/index.js",
+    "lint": "eslint ."
   },
   "dependencies": {
     "@clerk/express": "^1.7.63",
@@ -20,6 +21,15 @@
     "expressjs": "^1.0.1",
     "inngest": "^3.49.3",
     "mongodb": "^7.0.0",
-    "mongoose": "^8.19.3"
+    "mongoose": "^8.19.3",
+    "multer": "^2.0.2",
+    "prettier": "^3.8.1",
+    "prettier-eslint": "^16.4.2"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.39.2",
+    "eslint": "^8.57.1",
+    "eslint-plugin-react": "^7.37.5",
+    "globals": "^17.3.0"
   }
 }
