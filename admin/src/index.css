@@ -1,1 +1,5 @@
 /** @format */
+@import "tailwindcss";
+@plugin "daisyui" {
+  themes: forest;
+}
