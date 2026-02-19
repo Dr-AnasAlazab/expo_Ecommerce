@@ -98,24 +98,17 @@ export async function updateProduct(req, res) {
     res.status(500).json({ message: "Internal server error" });
   }
 }
-
 export async function getAllOrders(_, res) {
   try {
     const orders = await Order.find()
       .populate("user", "name email")
-      .populate("orderItmes.product")
-      .sort({
-        createdAt: -1,
-      });
+      .populate("orderItems.product")
+      .sort({ createdAt: -1 });
 
-    if (!orders) {
-      return res.status(404).json({ message: "No orders found" });
-    }
-
-    res.status(200).json(orders);
+    res.status(200).json({ orders });
   } catch (error) {
-    console.error("Error fetching orders:", error);
-    res.status(500).json({ message: "Internal server error" });
+    console.error("Error in getAllOrders controller:", error);
+    res.status(500).json({ error: "Internal server error" });
   }
 }
 
