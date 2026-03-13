@@ -12,7 +12,7 @@ export default function DashboardLayout() {
         id="my-drawer"
         type="checkbox"
         className="drawer-toggle"
-        defualtChecked
+        defaultChecked
       />
       <div className="drawer-content">
         <Navbar />

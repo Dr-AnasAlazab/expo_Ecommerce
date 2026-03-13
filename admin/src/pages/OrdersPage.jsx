@@ -10,7 +10,7 @@ export default function OrdersPage() {
 
   const { data: orderData, isLoading } = useQuery({
     queryKey: ["orders"],
-    quryFn: orderApi.getAll,
+    queryFn: orderApi.getAll,
   });
 
   const updateStatusMutation = useMutation({
