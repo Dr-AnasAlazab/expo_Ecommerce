@@ -5,7 +5,7 @@ import React from "react";
 
 export default function LoginPage() {
   return (
-    <div>
+    <div className="h-screen flex justify-center items-center">
       <SignIn>Sign in</SignIn>
     </div>
   );
