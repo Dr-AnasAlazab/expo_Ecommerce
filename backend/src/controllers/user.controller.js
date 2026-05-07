@@ -130,7 +130,7 @@ export async function deleteAddress(req, res) {
 //changed
 export async function addToWishlist(req, res) {
   try {
-    const { productId } = req.body;
+    const { productId } = req.params;
     const user = req.user;
 
     // check if product is already in the wishlist

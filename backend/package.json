@@ -8,6 +8,7 @@
   "type": "module",
   "main": "index.js",
   "scripts": {
+    "ngrok": "node --watch src/ngrok.js",
     "dev": "node --watch src/server.js",
     "start": "npm install && node src/server.js",
     "seed:products": "node src/seeds/index.js",
@@ -15,15 +16,17 @@
   },
   "dependencies": {
     "@clerk/express": "^1.7.63",
+    "@ngrok/ngrok": "^1.7.0",
     "cloudinary": "^2.8.0",
     "cors": "^2.8.6",
     "dotenv": "^17.2.3",
     "express": "^5.2.1",
     "expressjs": "^1.0.1",
-    "inngest": "^3.49.3",
+    "inngest": "^3.54.2",
     "mongodb": "^7.0.0",
     "mongoose": "^8.19.3",
     "multer": "^2.0.2",
+    "ngrok": "^5.0.0-beta.2",
     "prettier": "^3.8.1",
     "prettier-eslint": "^16.4.2"
   },
