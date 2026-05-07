@@ -16,4 +16,5 @@ export const ENV = {
   CLOUDINARY_CLOUD_NAME: process.env.CLOUDINARY_CLOUD_NAME,
   ADMIN_EMAIL: process.env.ADMIN_EMAIL,
   CLIENT_URL: process.env.CLIENT_URL,
+  NGROK_AUTH_TOKEN: process.env.NGROK_AUTH_TOKEN,
 };
