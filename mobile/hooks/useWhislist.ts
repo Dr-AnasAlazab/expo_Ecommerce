@@ -15,7 +15,9 @@ const useWhishlist = () => {
   } = useQuery({
     queryKey: ["wishlist"],
     queryFn: async () => {
-      const { data } = await api.get<{ wishlist: Product[] }>("/user/wishlist");
+      const { data } = await api.get<{ wishlist: Product[] }>(
+        "/users/wishlist",
+      );
       return data.wishlist;
     },
   });
@@ -34,7 +36,7 @@ const useWhishlist = () => {
   const removeFromWishlistMutation = useMutation({
     mutationFn: async (productId: string) => {
       const { data } = await api.delete<{ wishlist: string[] }>(
-        `/user/wishlist/${productId}`,
+        `/users/wishlist/${productId}`,
       );
 
       return data.wishlist;

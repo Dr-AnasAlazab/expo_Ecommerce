@@ -52,12 +52,16 @@ const userSchema = new mongoose.Schema(
       type: String,
       default: "",
     },
+    stripeCustomerId: {
+      type: String,
+      default: "",
+    },
     clerkId: {
       type: String,
       unique: true,
       required: true,
     },
-    address: [addressSchema],
+    addresses: [addressSchema],
     wishlist: [
       {
         type: mongoose.Schema.Types.ObjectId,
