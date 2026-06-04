@@ -8,15 +8,28 @@ import { clerkMiddleware } from "@clerk/express";
 import { functions, inngest } from "./config/inngest.js";
 import { serve } from "inngest/express";
 import adminRoutes from "./routes/admin.route.js";
-import userRoute from "./routes/user.route.js";
+import userRoutes from "./routes/user.route.js";
 import orderRoute from "./routes/order.route.js";
 import reviewRoute from "./routes/review.route.js";
 import cartRoute from "./routes/cart.route.js";
 import productRoute from "./routes/product.route.js";
+import paymentRoutes from "./routes/payment.route.js";
 import cors from "cors";
 import ngrok from "@ngrok/ngrok";
 
 export const app = express();
+
+app.use(
+  "/api/payment",
+  (req, res, next) => {
+    if (req.originalUrl === "/api/payment/webhook") {
+      express.raw({ type: "application/json" })(req, res, next);
+    } else {
+      express.json()(req, res, next); // parse json for non-webhook routes
+    }
+  },
+  paymentRoutes,
+);
 
 app.use(express.json());
 
@@ -27,8 +40,8 @@ app.use(cors({ origin: ENV.CLIENT_URL, credentials: true }));
 app.use("/api/inngest", serve({ client: inngest, functions }));
 
 app.use("/api/admin", adminRoutes);
-app.use("/api/user", userRoute);
-app.use("/api/order", orderRoute);
+app.use("/api/users", userRoutes);
+app.use("/api/orders", orderRoute);
 app.use("/api/reviews", reviewRoute);
 app.use("/api/products", productRoute);
 app.use("/api/cart", cartRoute);

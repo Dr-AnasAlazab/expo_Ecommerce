@@ -38,21 +38,21 @@ export async function createOrder(req, res) {
     });
 
     //changed
-    const updatePromises = orderItems.map((item) => {
-      return Product.findByIdAndUpdate(item.product._id, {
-        $inc: { stock: -item.quantity },
-      });
-    });
-
-    // 2. Execute them all simultaneously
-    await Promise.all(updatePromises);
-
-    // update product stock
-    // for (const item of orderItems) {
-    //   await Product.findByIdAndUpdate(item.product._id, {
+    // const updatePromises = orderItems.map((item) => {
+    //   return Product.findByIdAndUpdate(item.product._id, {
     //     $inc: { stock: -item.quantity },
     //   });
-    // }
+    // });
+
+    // // 2. Execute them all simultaneously
+    // await Promise.all(updatePromises);
+
+    // update product stock
+    for (const item of orderItems) {
+      await Product.findByIdAndUpdate(item.product._id, {
+        $inc: { stock: -item.quantity },
+      });
+    }
 
     res.status(201).json({ message: "Order created successfully", order });
   } catch (error) {
